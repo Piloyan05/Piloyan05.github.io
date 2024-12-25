@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Calculations</title>
+  <link rel="stylesheet" href="style.css">
+  <!DOCTYPE html>
+  <html lang="en">
+  </head>
+  <body>
+    <h1>ՀԱՇՎԻՉ</h1>
+  
+    <div class="container side-by-side">
+      <div id="section1" class="section">
+        <h2>ՀՈՍԱՆՔԻ ԿԻՍԱՄՅԱԿԱՅԻՆ ՄԻՋԻՆ ԾԱԽՍ</h2>
+        <form onsubmit="addAndRound(); return false;">
+          <label for="input1">ԱՌԱՋԻՆ ԿԻՍԱՄՅԱԿ</label>
+          <input type="number" id="input1" min="0" oninput="validateNonNegative(this)" required><br>
+  
+          <label for="input2">ԵՐԿՐՈՐԴ ԿԻՍԱՄՅԱԿ</label>
+          <input type="number" id="input2" min="0" oninput="validateNonNegative(this)" required><br>
+  
+          <button type="submit" >ՀԱՇՎԵԼ</button>
+          <button type="reset" onclick="resetSection('result1')">ԶՐՈՅԱՑՆԵԼ</button>
+        </form>
+        <p>ԸՆԴԱՄԵՆԸ <span id="result1">0</span> ԴՐԱՄ</p>
+      </div>
+  
+      <div id="section2" class="section">
+        <h2>ՀՈՍԱՆՔԻ ՍԵԶՈՆԱՅԻՆ ՄԻՋԻՆ ԾԱԽՍ</h2>
+        <form onsubmit="multiplyAddDivide(); return false;">
+          <label for="input3">ԱՄԱՌ</label>
+          <input type="number" id="input3" min="0" oninput="validateNonNegative(this)"required><br>
+  
+          <label for="input4">ՁՄԵՌ</label>
+          <input type="number" id="input4" min="0" oninput="validateNonNegative(this)" required><br>
+  
+          <button type="submit">ՀԱՇՎԵԼ</button>
+          <button type="reset" onclick="resetSection('result2')">ԶՐՈՅԱՑՆԵԼ</button>
+        </form>
+        <p>ԸՆԴԱՄԵՆԸ <span id="result2">0</span> ԴՐԱՄ</p>
+      </div>
+  
+      <div id="section3" class="section">
+        <h2>12 ԱՄԻՍՆԵՐԻ ԳՈՒՄԱՐԸ</h2>
+        <form id="form" onsubmit="calculateSumOfTwelve(); return false;">
+          <div class="contFull">
+          <div class="cont1">
+            <label for="input5">ՀՈՒՆՎԱՐ</label>
+            <input type="number" id="input5" min="0" oninput="validateNonNegative(this)" ><br>
+  
+            <label for="input6">ՓԵՏՐՎԱՐ</label>
+            <input type="number" id="input6" min="0" oninput="validateNonNegative(this)" ><br>
+  
+            <label for="input7">ՄԱՐՏ</label>
+            <input type="number" id="input7" min="0" oninput="validateNonNegative(this)" ><br>
+  
+            <label for="input8">ԱՊՐԻԼ</label>
+            <input type="number" id="input8" min="0" oninput="validateNonNegative(this)" ><br>
+  
+            <label for="input9">ՄԱՅԻՍ</label>
+            <input type="number" id="input9" min="0" oninput="validateNonNegative(this)" ><br>
+  
+            <label for="input10">ՀՈՒՆԻՍ</label>
+            <input type="number" id="input10" min="0" oninput="validateNonNegative(this)" ><br>
+
+          </div>
+          
+          <div class="cont2">
+  
+            <label for="input11">ՀՈՒԼԻՍ</label>
+            <input type="number" id="input11" min="0" oninput="validateNonNegative(this)" ><br>
+  
+            <label for="input12">ՕԳՈՍՏՈՍ</label>
+            <input type="number" id="input12" min="0" oninput="validateNonNegative(this)" ><br>
+  
+            <label for="input13">ՍՈՊՏԵՄԲԵՐ</label>
+            <input type="number" id="input13" min="0" oninput="validateNonNegative(this)" ><br>
+  
+            <label for="input14">ՀՈԿՏԵՄԲԵՐ</label>
+            <input type="number" id="input14" min="0" oninput="validateNonNegative(this)" ><br>
+  
+            <label for="input15">ՆՈՅԵՄԲԵՐ</label>
+            <input type="number" id="input15" min="0" oninput="validateNonNegative(this)" ><br>
+  
+            <label for="input16">ԴԵԿՏԵՄԲԵՐ</label>
+            <input type="number" id="input16" min="0" oninput="validateNonNegative(this)" ><br>
+          </div>
+        </div>
+          <div class="btn">
+            <button type="submit" class="btn1">ՀԱՇՎԵԼ</button>
+            <button type="reset" class="btn2" onclick="resetSection('result3')">ԶՐՈՅԱՑՆԵԼ</button>
+          </div>
+        </form>
+
+        <p>ԸՆԴԱՄԵՆԸ <span id="result3">0</span> ԴՐԱՄ</p>
+        
+      </div>
+      
+    </div>
+  
+    <div class="container side-by-side">
+      <div id="section4" class="section">
+        <h2>ԿԱՄԱՅԱԿԱՆ ԹՎՈՎ ՀԱՇՎԱՐԿ</h2>
+        <form onsubmit="displayResult(); return false;">
+          <label for="inputResult">ԿԱՄԱՅԱԿԱՆ ԱՐԺԵՔ</label>
+          <input type="number" id="inputResult" min="0" oninput="validateNonNegative(this)" required><br>
+  
+          <button type="submit">ՑՈՒՑԱԴՐԵԼ</button>
+          <button type="reset" onclick="resetSection('result4')">ԶՐՈՅԱՑՆԵԼ</button>
+        </form>
+        <p>ԸՆԴԱՄԵՆԸ <span id="result4">0</span> ԴՐԱՄ</p>
+      </div>
+      
+
+      <div class="section">
+        <h2>ՎԵՐՋՆԱԿԱՆ ՀԱՇՎԱՐԿ</h2>
+        <form >
+          <p>ՀՈՍԱՆՔԻ ՏԱՐԵԿԱՆ ՄԻՋԻՆ <br> ԾԱԽՍ ԿԻԼՈՎԱՏՈՎ <span id="dividedBy52">0 Կվ</span> </p>
+          <p>ԱՐևԱՅԻՆ ԿԱՅԱՆԻ  <br>ԱՆՀԱՐԺԵՇՏ ՀԶՈՐՈՒԹՅՈՒՆ <span id="dividedBy1500">0 Կվ</span> </p>
+          <p>ՎԵՐՋՆԱԿԱՆ ԱՐԴՅՈՒՆՔ <span id="finalResult">0 Կվ</span> </p>
+          <button type="reset" onclick="resetFinalResults('finalResult')">ԶՐՈՅԱՑՆԵԼ</button>
+        </form>
+      </div>
+  
+      <div class="section" id="section5">
+        <h2>ՀՈՍԱՆՔԻ ԾԱԽՍԻ ՀԱՇՎԻՉ</h2>
+        <form id="powerForm" onsubmit="calculateUsage(); return false;">
+          <label for="powerInput">ՍԱՐՔԱՎՈՐՄԱՆ ՀԶՈՐՈՒԹՅՈՒՆԸ (Կվ)</label>
+          <input type="number" id="powerInput"  min="0" oninput=" validateKW(this)" required> <br><br>
+  
+          <label for="hoursPerDay">ՕՐԱԿԱՆ ՕԳՏԱԳՈՐԾՄԱՆ ԺԱՄԱՆԱԿԸ</label>
+          <input type="number" id="hoursPerDay"  min="0" oninput="validateHours(this)" required> <br><br>
+          <div class="powerbtn">
+            <button class="btn1" type="submit">ՀԱՇՎԵԼ</button> <br> <br>
+            <button type="reset" onclick="resetSectionAll('span1','span2','span3','span4')">ԶՐՈՅԱՑՆԵԼ</button>
+          </div>
+
+        </form>
+  
+        <div class="result" id="result10">ՕՐԱԿԱՆ ԾԱԽՍ։ <span id="span1" class="span1">0 Կվ/ժ</span> </div>
+        <div class="result" id="result20">ՇԱԲԱԹԱԿԱՆ ԾԱԽՍ։ <span id="span2" class="span2">0 Կվ/ժ</span> </div>
+        <div class="result" id="result30">ԱՄՍԱԿԱՆ ԾԱԽՍ։<span id="span3" class="span3">0 Կվ/ժ</span> </div>
+        <div class="result" id="result40">ՏԱՐԵԿԱՆ ԾԱԽՍ։ <span id="span4" class="span4">0 Կվ/ժ</span></div>
+      </div>
+    </div>
+  <script src="./index.js"></script>
+</body>
+</html>
