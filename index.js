@@ -8,15 +8,15 @@ function resetSection(resultId) {
   document.getElementById(resultId).textContent = "0";
 }
 function resetSectionAll(result10,result20,result30,result40) {
-  document.getElementById(result10).textContent = "0 kWh";
-  document.getElementById(result20).textContent = "0 kWh";
-  document.getElementById(result30).textContent = "0 kWh";
-  document.getElementById(result40).textContent = "0 kWh";
+  document.getElementById(result10).textContent = "0 Կվ/ժ";
+  document.getElementById(result20).textContent = "0 Կվ/ժ";
+  document.getElementById(result30).textContent = "0 Կվ/ժ";
+  document.getElementById(result40).textContent = "0 Կվ/ժ";
 }
 function resetFinalResults() {
-  document.getElementById('dividedBy52').textContent = "0 Կվ";
-  document.getElementById('dividedBy1500').textContent = "0 Կվ";
-  document.getElementById('finalResult').textContent = "0 Կվ";
+  document.getElementById('dividedBy52').innerHTML = "<br> 0 Կվ";
+  document.getElementById('dividedBy1500').innerHTML = "<br>0 Կվ";
+  document.getElementById('finalResult').innerHTML = "<br>0 Կվ";
 }
 
 
@@ -42,10 +42,10 @@ const roundedDividedBy52 = Math.ceil(dividedBy52 / 1000) * 1000;
 const dividedBy1500 = Math.ceil(roundedDividedBy52 / 1500);
 
 // Update intermediate results
-document.getElementById('dividedBy52').textContent = roundedDividedBy52 + " ԿՎ";
-document.getElementById('dividedBy1500').textContent = dividedBy1500 + " ԿՎ";
+document.getElementById('dividedBy52').innerHTML ="<br>" + roundedDividedBy52 + " ԿՎ";
+document.getElementById('dividedBy1500').innerHTML ="<br>" + dividedBy1500 + " ԿՎ";
 // Set final result 
-document.getElementById('finalResult').textContent = dividedBy1500 + " ԿՎ";
+document.getElementById('finalResult').innerHTML = "<br>" + dividedBy1500 + " ԿՎ";
 }
 
 
@@ -73,10 +73,10 @@ const roundedDividedBy52 = Math.ceil(dividedBy52 / 1000) * 1000;
 const dividedBy1500 = Math.ceil(roundedDividedBy52 / 1500);
 
 // Update intermediate results
-document.getElementById('dividedBy52').textContent = roundedDividedBy52 + " ԿՎ";
-document.getElementById('dividedBy1500').textContent = dividedBy1500 + " ԿՎ";
+document.getElementById('dividedBy52').innerHTML ="<br>" + roundedDividedBy52 + " ԿՎ";
+document.getElementById('dividedBy1500').innerHTML ="<br>" + dividedBy1500 + " ԿՎ";
 // Set final result
-document.getElementById('finalResult').textContent = dividedBy1500 + " ԿՎ";
+document.getElementById('finalResult').innerHTML ="<br>" + dividedBy1500 + " ԿՎ";
 
 }
 
@@ -103,10 +103,10 @@ const roundedDividedBy52 = Math.ceil(dividedBy52 / 1000) * 1000;
 const dividedBy1500 = Math.ceil(roundedDividedBy52 / 1500);
 
 // Update intermediate results
-document.getElementById('dividedBy52').textContent = roundedDividedBy52 + " ԿՎ";
-document.getElementById('dividedBy1500').textContent = dividedBy1500 + " ԿՎ";
+document.getElementById('dividedBy52').innerHTML ="<br>" + roundedDividedBy52 + " ԿՎ";
+document.getElementById('dividedBy1500').innerHTML ="<br>" + dividedBy1500 + " ԿՎ";
 // Set final result
-document.getElementById('finalResult').textContent = dividedBy1500 + " ԿՎ";
+document.getElementById('finalResult').innerHTML ="<br>" + dividedBy1500 + " ԿՎ";
 
 }
 
@@ -128,10 +128,10 @@ function displayResult() {
 // Divide by 1500 and round up to the nearest 1
 const dividedBy1500 = Math.ceil(roundedDividedBy52 / 1500);
 
-document.getElementById('dividedBy52').textContent = roundedDividedBy52 + " ԿՎ";
-document.getElementById('dividedBy1500').textContent = dividedBy1500 + " ԿՎ";
+document.getElementById('dividedBy52').innerHTML ="<br>" + roundedDividedBy52 + " ԿՎ";
+document.getElementById('dividedBy1500').innerHTML ="<br>" + dividedBy1500 + " ԿՎ";
 // Set final result
-document.getElementById('finalResult').textContent = dividedBy1500 + " ԿՎ";
+document.getElementById('finalResult').innerHTML ="<br>" + dividedBy1500 + " ԿՎ";
 
 
 

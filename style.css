@@ -21,8 +21,23 @@
     .contFull{
         display: flex;
     }
-    .btn{
+    .header{
+        font-size: 50px;
+        font-weight: bold;
+    }
+    header{
         display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    img{
+        width: 130px;
+        height: 130px;
+    }
+    .btn{
+
+        align-items: center;
+        text-align: center;
     }
 
     .btn1{
@@ -30,7 +45,15 @@
     }
 
     .powerbtn{
+        align-items: center;
+        justify-content: center;
+    }
+
+    .bbb{
         display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
 
     .btn2{
@@ -56,6 +79,7 @@
 
 
     .section {
+        text-align: center;
         background-color: #FFFFFF; /* Clean contrast */
         border: 5px solid #CCCCCC; /* Soft outline */
         color: #333333; /* Text color */
