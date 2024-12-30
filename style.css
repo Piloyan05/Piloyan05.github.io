@@ -184,3 +184,54 @@
       width: 30%;
       margin: 10px;
     }
+
+    .containerLast {
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      background-color: #FFFFFF; /* Clean contrast */
+      border: 5px solid #CCCCCC; /* Soft outline */
+      color: #333333; /* Text color */
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle depth */
+      border-radius: 8px; /* Rounded corners for modern look */
+      padding: 15px;
+      box-sizing: border-box;
+      width: 30%;
+      margin: 10px;
+      padding: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #0056b3;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #003d80;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #0056b3;
+    }

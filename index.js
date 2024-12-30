@@ -1,3 +1,4 @@
+
 function validateNonNegative(input) {
   if (input.value < 0) {
     input.value = ""; // Clear the input if it's negative
@@ -35,17 +36,21 @@ function addAndRound() {
 
   const result1 = parseFloat(document.getElementById('result1').textContent);
   let finalValue = result1
+  const regionMultiplier1 = parseFloat(document.getElementById("regionSelect1").value);
+
   const dividedBy52 = Math.ceil(finalValue / 52);
-const roundedDividedBy52 = Math.ceil(dividedBy52 / 1000) * 1000;
+  const roundedDividedBy52 = Math.ceil(dividedBy52 / 1000) * 1000;
 
 // Divide by 1500 and round up to the nearest 1
-const dividedBy1500 = Math.ceil(roundedDividedBy52 / 1500);
+const dividedBy1500 = Math.ceil(roundedDividedBy52 / regionMultiplier1);
+const nextResult  = dividedBy1500 + 2;
+
 
 // Update intermediate results
 document.getElementById('dividedBy52').innerHTML ="<br>" + roundedDividedBy52 + " ԿՎ";
 document.getElementById('dividedBy1500').innerHTML ="<br>" + dividedBy1500 + " ԿՎ";
 // Set final result 
-document.getElementById('finalResult').innerHTML = "<br>" + dividedBy1500 + " ԿՎ";
+document.getElementById('finalResult').innerHTML = "<br>" + nextResult + " ԿՎ";
 }
 
 
@@ -63,20 +68,23 @@ function multiplyAddDivide() {
   const roundedResult = Math.ceil(result / 5000) * 5000;
   document.getElementById('result2').textContent = roundedResult;
 
+  const regionMultiplier2 = parseFloat(document.getElementById("regionSelect2").value);
 
   const result2 = parseFloat(document.getElementById('result2').textContent);
   let finalValue = result2;
   const dividedBy52 = Math.ceil(finalValue / 52);
-const roundedDividedBy52 = Math.ceil(dividedBy52 / 1000) * 1000;
+  const roundedDividedBy52 = Math.ceil(dividedBy52 / 1000) * 1000;
 
 // Divide by 1500 and round up to the nearest 1
-const dividedBy1500 = Math.ceil(roundedDividedBy52 / 1500);
+const dividedBy1500 = Math.ceil(roundedDividedBy52 / regionMultiplier2);
+const nextResult  = dividedBy1500 + 2;
+
 
 // Update intermediate results
 document.getElementById('dividedBy52').innerHTML ="<br>" + roundedDividedBy52 + " ԿՎ";
 document.getElementById('dividedBy1500').innerHTML ="<br>" + dividedBy1500 + " ԿՎ";
 // Set final result
-document.getElementById('finalResult').innerHTML ="<br>" + dividedBy1500 + " ԿՎ";
+document.getElementById('finalResult').innerHTML ="<br>" + nextResult + " ԿՎ";
 
 }
 
@@ -95,18 +103,22 @@ function calculateSumOfTwelve() {
 
 
   const result3 = parseFloat(document.getElementById('result3').textContent);
+  const regionMultiplier3 = parseFloat(document.getElementById("regionSelect3").value);
+
   let finalValue = result3;
   const dividedBy52 = Math.ceil(finalValue / 52);
 const roundedDividedBy52 = Math.ceil(dividedBy52 / 1000) * 1000;
 
 // Divide by 1500 and round up to the nearest 1
-const dividedBy1500 = Math.ceil(roundedDividedBy52 / 1500);
+const dividedBy1500 = Math.ceil(roundedDividedBy52 / regionMultiplier3);
+const nextResult  = dividedBy1500 + 2;
+
 
 // Update intermediate results
 document.getElementById('dividedBy52').innerHTML ="<br>" + roundedDividedBy52 + " ԿՎ";
 document.getElementById('dividedBy1500').innerHTML ="<br>" + dividedBy1500 + " ԿՎ";
 // Set final result
-document.getElementById('finalResult').innerHTML ="<br>" + dividedBy1500 + " ԿՎ";
+document.getElementById('finalResult').innerHTML ="<br>" + nextResult + " ԿՎ";
 
 }
 
@@ -121,17 +133,20 @@ function displayResult() {
   document.getElementById('result4').textContent = inputResult;
 
   const result4 = parseFloat(document.getElementById('result4').textContent);
+  const regionMultiplier4 = parseFloat(document.getElementById("regionSelect4").value);
+
   let finalValue = result4;
   const dividedBy52 = Math.ceil(finalValue / 52);
   const roundedDividedBy52 = Math.ceil(dividedBy52 / 1000) * 1000;
 
 // Divide by 1500 and round up to the nearest 1
-const dividedBy1500 = Math.ceil(roundedDividedBy52 / 1500);
+const dividedBy1500 = Math.ceil(roundedDividedBy52 / regionMultiplier4);
+const nextResult  = dividedBy1500 + 2;
 
 document.getElementById('dividedBy52').innerHTML ="<br>" + roundedDividedBy52 + " ԿՎ";
 document.getElementById('dividedBy1500').innerHTML ="<br>" + dividedBy1500 + " ԿՎ";
 // Set final result
-document.getElementById('finalResult').innerHTML ="<br>" + dividedBy1500 + " ԿՎ";
+document.getElementById('finalResult').innerHTML ="<br>" + nextResult + " ԿՎ";
 
 
 
@@ -155,14 +170,15 @@ const dividedBy52 = Math.ceil(finalValue / 52);
 const roundedDividedBy52 = Math.ceil(dividedBy52 / 1000) * 1000;
 
 // Divide by 1500 and round up to the nearest 1
-const dividedBy1500 = Math.ceil(roundedDividedBy52 / 1500);
+const dividedBy1500 = Math.ceil(roundedDividedBy52 / regionMultiplier);
+const nextResult  = dividedBy1500 + 2;
 
 // Update intermediate results
 document.getElementById('dividedBy52').textContent = roundedDividedBy52;
 document.getElementById('dividedBy1500').textContent = dividedBy1500;
 
 // Set final result
-document.getElementById('finalResult').textContent = dividedBy1500;
+document.getElementById('finalResult').textContent = nextResult;
 }
 
 
@@ -203,3 +219,47 @@ function validateKW(input) {
     input.value = 30; 
   }
   }
+
+
+  function calculateResult() {
+    const numberInput = parseFloat(document.getElementById("numberInput").value) || 0;
+    const regionMultiplier = parseFloat(document.getElementById("regionSelect").value) || 1;
+  
+    // Elements for results
+    const resultElement = document.getElementById("calculationResultM");
+    const resultElementM = document.getElementById("calculationResult");
+    const calculationResultNeededCostM = document.getElementById("calculationResultNeededCost");
+    const calculationResultNeededCost = document.getElementById("calculationResultNeededCostM");
+    const calculationResultSuggestedM = document.getElementById("calculationResultSuggested");
+    const calculationResultSuggested = document.getElementById("calculationResultSuggestedM");
+  
+    // Parse needed and suggested results from existing elements
+    const neededResult = parseFloat(
+      document.getElementById("dividedBy1500").textContent.replace(/[^\d.]/g, "")
+    ) || 0;
+  
+    const suggestedResult = parseFloat(
+      document.getElementById("finalResult").textContent.replace(/[^\d.]/g, "")
+    ) || 0;
+  
+    // Calculate with input value
+    const inputResult = numberInput * regionMultiplier * 52;
+    const inputResultM =  Math.ceil( ((numberInput * regionMultiplier * 52) / 12)/10000)*10000;
+  
+    // Calculate with needed value
+    const neededResultCost = neededResult * regionMultiplier * 52;
+    const neededResultCostM = Math.ceil(((neededResult * regionMultiplier * 52) / 12)/10000)*10000;
+  
+    // Calculate with suggested value
+    const suggestedResultCost = suggestedResult * regionMultiplier * 52;
+    const suggestedResultCostM = Math.ceil(((suggestedResult * regionMultiplier * 52) / 12)/10000)*10000;
+  
+    // Update the results
+    resultElement.textContent = `ԱՐևԱՅԻՆ ԿԱՅԱՆԻ ԱՄՍԱԿԱՆ ԱՐՏԱԴՐԱԾ Կվ-ն ԴՐԱՄՈՎ: ${inputResultM.toFixed(2)} ԴՐ`;
+    resultElementM.textContent = `ԱՐևԱՅԻՆ ԿԱՅԱՆԻ ՏԱՐԵԿԱՆ ԱՐՏԱԴՐԱԾ Կվ-ն ԴՐԱՄՈՎ: ${inputResult.toFixed(2)} ԴՐ`;
+    calculationResultNeededCost.textContent = `ԱՄՍԱԿԱՆ ԱՐՏԱԴՐԱԾ Կվ-ն ԴՐԱՄՈՎ, ԸՍՏ ԱՆՀԱՐԺԵՇՏ ԿԱՅԱՆԻ: ${neededResultCostM.toFixed(2)} ԴՐ`;
+    calculationResultNeededCostM.textContent = `ՏԱՐԵԿԱՆ ԱՐՏԱԴՐԱԾ Կվ-ն ԴՐԱՄՈՎ, ԸՍՏ ԱՆՀԱՐԺԵՇՏ ԿԱՅԱՆԻ։ ${neededResultCost.toFixed(2)} ԴՐ`;
+    calculationResultSuggested.textContent = `ԱՄՍԱԿԱՆ ԱՐՏԱԴՐԱԾ Կվ-ն ԴՐԱՄՈՎ, ԸՍՏ ԱՆՀԱՐԺԵՇՏ ԿԱՅԱՆԻ: ${suggestedResultCostM.toFixed(2)} ԴՐ`;
+    calculationResultSuggestedM.textContent = `ՏԱՐԵԿԱՆ ԱՐՏԱԴՐԱԾ Կվ-ն ԴՐԱՄՈՎ, ԸՍՏ ԱՌԱՋԱՐԿՎՈՂ ԿԱՅԱՆԻ: ${suggestedResultCost.toFixed(2)} ԴՐ`;
+  }
+  

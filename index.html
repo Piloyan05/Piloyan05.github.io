@@ -14,15 +14,30 @@
       <span class="header">ՀԱՇՎԻՉ</span>
     </header>
     
-        <div class="container side-by-side">
+    <div class="container side-by-side">
       <div id="section1" class="section">
         <h2>ՀՈՍԱՆՔԻ ԿԻՍԱՄՅԱԿԱՅԻՆ ՄԻՋԻՆ ԾԱԽՍ</h2>
         <form onsubmit="addAndRound(); return false;">
           <label for="input1">ԱՌԱՋԻՆ ԿԻՍԱՄՅԱԿ</label>
-          <input type="number" id="input1" min="0" oninput="validateNonNegative(this)" required><br>
+          <input type="number" step="0.01" id="input1" min="0" oninput="validateNonNegative(this)" required><br>
   
           <label for="input2">ԵՐԿՐՈՐԴ ԿԻՍԱՄՅԱԿ</label>
-          <input type="number" id="input2" min="0" oninput="validateNonNegative(this)" required><br>
+          <input type="number" step="0.01" id="input2" min="0" oninput="validateNonNegative(this)" required><br>
+          <label for="regionSelect1">Ընտրեք մարզը</label>
+        <select id="regionSelect1" required>
+          <option value="" disabled selected>Ընտրեք մարզը</option>
+          <option value="1500">ԵՐԵՎԱՆ</option>
+          <option value="1600">ԱՐԱԳԱԾՈՏՆ </option>
+          <option value="1600">ԱՐԱՐԱՏ</option>
+          <option value="1500">ԱՐՄԱՎԻՐ </option>
+          <option value="1500">ԳԵՂԱՐՔՈՒՆԻՔ </option>
+          <option value="1500">ԿՈՏԱՅՔ</option>
+          <option value="1300">ԼՈՌԻ</option>
+          <option value="1500">ՇԻՐԱԿ </option>
+          <option value="1300">ՍՅՈՒՆԻՔ </option>
+          <option value="1300">ՏԱՎՈՒՇ</option>
+          <option value="1500">ՎԱՅՈՑ ՁՈՐ </option>
+        </select>
   
           <button type="submit" >ՀԱՇՎԵԼ</button>
           <button type="reset" onclick="resetSection('result1')">ԶՐՈՅԱՑՆԵԼ</button>
@@ -34,10 +49,26 @@
         <h2>ՀՈՍԱՆՔԻ ՍԵԶՈՆԱՅԻՆ ՄԻՋԻՆ ԾԱԽՍ</h2>
         <form onsubmit="multiplyAddDivide(); return false;">
           <label for="input3">ԱՄԱՌ</label>
-          <input type="number" id="input3" min="0" oninput="validateNonNegative(this)"required><br>
+          <input type="number" step="0.01" id="input3" min="0" oninput="validateNonNegative(this)"required><br>
   
           <label for="input4">ՁՄԵՌ</label>
-          <input type="number" id="input4" min="0" oninput="validateNonNegative(this)" required><br>
+          <input type="number" step="0.01" id="input4" min="0" oninput="validateNonNegative(this)" required><br>
+
+          <label for="regionSelect2">Ընտրեք մարզը</label>
+        <select id="regionSelect2" required>
+          <option value="" disabled selected>Ընտրեք մարզը</option>
+          <option value="1500">ԵՐԵՎԱՆ</option>
+          <option value="1600">ԱՐԱԳԱԾՈՏՆ </option>
+          <option value="1600">ԱՐԱՐԱՏ</option>
+          <option value="1500">ԱՐՄԱՎԻՐ </option>
+          <option value="1500">ԳԵՂԱՐՔՈՒՆԻՔ </option>
+          <option value="1500">ԿՈՏԱՅՔ</option>
+          <option value="1300">ԼՈՌԻ</option>
+          <option value="1500">ՇԻՐԱԿ </option>
+          <option value="1300">ՍՅՈՒՆԻՔ </option>
+          <option value="1300">ՏԱՎՈՒՇ</option>
+          <option value="1500">ՎԱՅՈՑ ՁՈՐ </option>
+        </select>
   
           <button type="submit">ՀԱՇՎԵԼ</button>
           <button type="reset" onclick="resetSection('result2')">ԶՐՈՅԱՑՆԵԼ</button>
@@ -51,46 +82,61 @@
           <div class="contFull">
           <div class="cont1">
             <label for="input5">ՀՈՒՆՎԱՐ</label>
-            <input type="number" id="input5" min="0" oninput="validateNonNegative(this)" ><br>
+            <input type="number" step="0.01" id="input5" min="0" oninput="validateNonNegative(this)" ><br>
   
             <label for="input6">ՓԵՏՐՎԱՐ</label>
-            <input type="number" id="input6" min="0" oninput="validateNonNegative(this)" ><br>
+            <input type="number" step="0.01" id="input6" min="0" oninput="validateNonNegative(this)" ><br>
   
             <label for="input7">ՄԱՐՏ</label>
-            <input type="number" id="input7" min="0" oninput="validateNonNegative(this)" ><br>
+            <input type="number" step="0.01" id="input7" min="0" oninput="validateNonNegative(this)" ><br>
   
             <label for="input8">ԱՊՐԻԼ</label>
-            <input type="number" id="input8" min="0" oninput="validateNonNegative(this)" ><br>
+            <input type="number" step="0.01" id="input8" min="0" oninput="validateNonNegative(this)" ><br>
   
             <label for="input9">ՄԱՅԻՍ</label>
-            <input type="number" id="input9" min="0" oninput="validateNonNegative(this)" ><br>
+            <input type="number" step="0.01" id="input9" min="0" oninput="validateNonNegative(this)" ><br>
   
             <label for="input10">ՀՈՒՆԻՍ</label>
-            <input type="number" id="input10" min="0" oninput="validateNonNegative(this)" ><br>
+            <input type="number" step="0.01" id="input10" min="0" oninput="validateNonNegative(this)" ><br>
 
           </div>
           
           <div class="cont2">
   
             <label for="input11">ՀՈՒԼԻՍ</label>
-            <input type="number" id="input11" min="0" oninput="validateNonNegative(this)" ><br>
+            <input type="number" step="0.01" id="input11" min="0" oninput="validateNonNegative(this)" ><br>
   
             <label for="input12">ՕԳՈՍՏՈՍ</label>
-            <input type="number" id="input12" min="0" oninput="validateNonNegative(this)" ><br>
+            <input type="number" step="0.01" id="input12" min="0" oninput="validateNonNegative(this)" ><br>
   
             <label for="input13">ՍՈՊՏԵՄԲԵՐ</label>
-            <input type="number" id="input13" min="0" oninput="validateNonNegative(this)" ><br>
+            <input type="number" step="0.01" id="input13" min="0" oninput="validateNonNegative(this)" ><br>
   
             <label for="input14">ՀՈԿՏԵՄԲԵՐ</label>
-            <input type="number" id="input14" min="0" oninput="validateNonNegative(this)" ><br>
+            <input type="number" step="0.01" id="input14" min="0" oninput="validateNonNegative(this)" ><br>
   
             <label for="input15">ՆՈՅԵՄԲԵՐ</label>
-            <input type="number" id="input15" min="0" oninput="validateNonNegative(this)" ><br>
+            <input type="number" step="0.01" id="input15" min="0" oninput="validateNonNegative(this)" ><br>
   
             <label for="input16">ԴԵԿՏԵՄԲԵՐ</label>
-            <input type="number" id="input16" min="0" oninput="validateNonNegative(this)" ><br>
+            <input type="number" step="0.01" id="input16" min="0" oninput="validateNonNegative(this)" ><br>
           </div>
         </div>
+        <label for="regionSelect3">Ընտրեք մարզը</label>
+        <select id="regionSelect3" required>
+          <option value="" disabled selected>Ընտրեք մարզը</option>
+          <option value="1500">ԵՐԵՎԱՆ</option>
+          <option value="1600">ԱՐԱԳԱԾՈՏՆ </option>
+          <option value="1600">ԱՐԱՐԱՏ</option>
+          <option value="1500">ԱՐՄԱՎԻՐ </option>
+          <option value="1500">ԳԵՂԱՐՔՈՒՆԻՔ </option>
+          <option value="1500">ԿՈՏԱՅՔ</option>
+          <option value="1300">ԼՈՌԻ</option>
+          <option value="1500">ՇԻՐԱԿ </option>
+          <option value="1300">ՍՅՈՒՆԻՔ </option>
+          <option value="1300">ՏԱՎՈՒՇ</option>
+          <option value="1500">ՎԱՅՈՑ ՁՈՐ </option>
+        </select>
           <div class="btn">
             <button type="submit" class="btn1">ՀԱՇՎԵԼ</button>
             <button type="reset" class="btn2" onclick="resetSection('result3')">ԶՐՈՅԱՑՆԵԼ</button>
@@ -108,7 +154,23 @@
         <h2>ԿԱՄԱՅԱԿԱՆ ԹՎՈՎ ՀԱՇՎԱՐԿ</h2>
         <form onsubmit="displayResult(); return false;">
           <label for="inputResult">ԿԱՄԱՅԱԿԱՆ ԱՐԺԵՔ</label>
-          <input type="number" id="inputResult" min="0" oninput="validateNonNegative(this)" required><br>
+          <input type="number" step="0.01" id="inputResult" min="0" oninput="validateNonNegative(this)" required><br>
+          
+          <label for="regionSelect4">Ընտրեք մարզը</label>
+        <select id="regionSelect4" required>
+          <option value="" disabled selected>Ընտրեք մարզը</option>
+          <option value="1500">ԵՐԵՎԱՆ</option>
+          <option value="1600">ԱՐԱԳԱԾՈՏՆ </option>
+          <option value="1600">ԱՐԱՐԱՏ</option>
+          <option value="1500">ԱՐՄԱՎԻՐ </option>
+          <option value="1500">ԳԵՂԱՐՔՈՒՆԻՔ </option>
+          <option value="1500">ԿՈՏԱՅՔ</option>
+          <option value="1300">ԼՈՌԻ</option>
+          <option value="1500">ՇԻՐԱԿ </option>
+          <option value="1300">ՍՅՈՒՆԻՔ </option>
+          <option value="1300">ՏԱՎՈՒՇ</option>
+          <option value="1500">ՎԱՅՈՑ ՁՈՐ </option>
+        </select>
   
           <button type="submit">ՑՈՒՑԱԴՐԵԼ</button>
           <button type="reset" onclick="resetSection('result4')">ԶՐՈՅԱՑՆԵԼ</button>
@@ -122,7 +184,7 @@
         <form >
           <p>ՀՈՍԱՆՔԻ ՏԱՐԵԿԱՆ ՄԻՋԻՆ <br> ԾԱԽՍ ԿԻԼՈՎԱՏՈՎ <span id="dividedBy52"> <br> 0 Կվ</span> </p>
           <p>ԱՐևԱՅԻՆ ԿԱՅԱՆԻ  <br>ԱՆՀԱՐԺԵՇՏ ՀԶՈՐՈՒԹՅՈՒՆ <span id="dividedBy1500"> <br> 0 Կվ</span> </p>
-          <p>ՎԵՐՋՆԱԿԱՆ ԱՐԴՅՈՒՆՔ <span id="finalResult"> <br>0 Կվ</span> </p>
+          <p>ԱՐԵՎԱՅԻՆ ԿԱՅԱՆԻ ԱՌԱՋԱՐԿՎՈՂ ՀԶՈՐՈՒԹՅՈՒՆ <span id="finalResult"> <br>0 Կվ</span> </p>
           <button type="reset" onclick="resetFinalResults('finalResult')">ԶՐՈՅԱՑՆԵԼ</button>
         </form>
       </div>
@@ -131,10 +193,10 @@
         <h2>ՀՈՍԱՆՔԻ ԾԱԽՍԻ ՀԱՇՎԻՉ</h2>
         <form id="powerForm" onsubmit="calculateUsage(); return false;">
           <label for="powerInput">ՍԱՐՔԱՎՈՐՄԱՆ ՀԶՈՐՈՒԹՅՈՒՆԸ (Կվ)</label>
-          <input type="number" id="powerInput"  min="0" oninput=" validateKW(this)" required> <br><br>
+          <input type="number" id="powerInput" step="0.01"  min="0" oninput=" validateKW(this)" required> <br><br>
   
           <label for="hoursPerDay">ՕՐԱԿԱՆ ՕԳՏԱԳՈՐԾՄԱՆ ԺԱՄԱՆԱԿԸ</label>
-          <input type="number" id="hoursPerDay"  min="0" oninput="validateHours(this)" required> <br><br>
+          <input type="number" id="hoursPerDay" step="0.01"  min="0" oninput="validateHours(this)" required> <br><br>
           <div class="powerbtn">
             <div class="bbb">
               <button class="btn1" type="submit">ՀԱՇՎԵԼ</button> <br> <br>
@@ -149,6 +211,39 @@
         <div class="result" id="result30">ԱՄՍԱԿԱՆ ԾԱԽՍ։<span id="span3" class="span3">0 Կվ/ժ</span> </div>
         <div class="result" id="result40">ՏԱՐԵԿԱՆ ԾԱԽՍ։ <span id="span4" class="span4">0 Կվ/ժ</span></div>
       </div>
+    </div>
+    <div class="containerLast">
+      <h2>ԱՄՍԱԿԱՆ ԱՐՏԱԴՐԱԾ Կվ-ն ԴՐԱՄՈՎ</h2>
+      <form id="regionCalculator" onsubmit="calculateResult(); return false;">
+        <label for="numberInput">ԱՐևԱՅԻՆ ԿԱՅԱՆԻ ՀԶՈՐՈՒԹՅՈՒՆ</label>
+        <input step="0.01" type="number" id="numberInput" min="0" >
+  
+        <label for="regionSelect">ԸՆՏՐԵՔ ՄԱՐԶԸ</label>
+        <select id="regionSelect" required>
+          <option  value="1500">ԵՐԵՎԱՆ</option>
+          <option value="1600">ԱՐԱԳԱԾՈՏՆ </option>
+          <option value="1600">ԱՐԱՐԱՏ</option>
+          <option selected value="1500">ԱՐՄԱՎԻՐ </option>
+          <option value="1500">ԳԵՂԱՐՔՈՒՆԻՔ </option>
+          <option value="1500">ԿՈՏԱՅՔ</option>
+          <option value="1300">ԼՈՌԻ</option>
+          <option value="1500">ՇԻՐԱԿ </option>
+          <option value="1300">ՍՅՈՒՆԻՔ </option>
+          <option value="1300">ՏԱՎՈՒՇ</option>
+          <option value="1500">ՎԱՅՈՑ ՁՈՐ </option>
+        </select>
+  
+        <button type="submit">ՀԱՇՎԵԼ</button>
+      </form>
+  
+      <div class="result" id="calculationResultM">ԱՐևԱՅԻՆ ԿԱՅԱՆԻ ԱՄՍԱԿԱՆ ԱՐՏԱԴՐԱԾ Կվ-ն ԴՐԱՄՈՎ: 0 ԴՐ</div>
+      <div class="result" id="calculationResult">ԱՐևԱՅԻՆ ԿԱՅԱՆԻ ՏԱՐԵԿԱՆ ԱՐՏԱԴՐԱԾ Կվ-ն ԴՐԱՄՈՎ: 0 ԴՐ</div>
+      <div class="result" id="calculationResultNeededCostM">ԱՄՍԱԿԱՆ ԱՐՏԱԴՐԱԾ Կվ-ն ԴՐԱՄՈՎ, ԸՍՏ ԱՆՀԱՐԺԵՇՏ ԿԱՅԱՆԻ: 0 ԴՐ</div>
+      <div class="result" id="calculationResultNeededCost">ՏԱՐԵԿԱՆ ԱՐՏԱԴՐԱԾ Կվ-ն ԴՐԱՄՈՎ, ԸՍՏ ԱՆՀԱՐԺԵՇՏ ԿԱՅԱՆԻ: 0 ԴՐ </div>
+      <div class="result" id="calculationResultSuggestedM">ԱՄՍԱԿԱՆ ԱՐՏԱԴՐԱԾ Կվ-ն ԴՐԱՄՈՎ, ԸՍՏ ԱՆՀԱՐԺԵՇՏ ԿԱՅԱՆԻ: 0 ԴՐ</div>
+      <div class="result" id="calculationResultSuggested">ՏԱՐԵԿԱՆ ԱՐՏԱԴՐԱԾ Կվ-ն ԴՐԱՄՈՎ, ԸՍՏ ԱՌԱՋԱՐԿՎՈՂ ԿԱՅԱՆԻ: 0 ԴՐ</div>
+
+  
     </div>
   <script src="./index.js"></script>
 </body>
